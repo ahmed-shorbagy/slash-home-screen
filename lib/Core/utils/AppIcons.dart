@@ -5,6 +5,10 @@ class Assets {
   /// assets/icons/Accessories.png
   static const String iconsAccessories = "assets/icons/Accessories.png";
 
+  /// Assets for iconsBlackFriday
+  /// assets/icons/black_friday.png
+  static const String iconsBlackFriday = "assets/icons/black_friday.png";
+
   /// Assets for iconsBooks
   /// assets/icons/books.png
   static const String iconsBooks = "assets/icons/books.png";
@@ -24,6 +28,14 @@ class Assets {
   /// Assets for iconsHome
   /// assets/icons/home.png
   static const String iconsHome = "assets/icons/home.png";
+
+  /// Assets for iconsHorizontalSlider2
+  /// assets/icons/Horizontal-Slider-2.png
+  static const String iconsHorizontalSlider2 = "assets/icons/Horizontal-Slider-2.png";
+
+  /// Assets for iconsHotDeal2
+  /// assets/icons/Hot_Deal2.png
+  static const String iconsHotDeal2 = "assets/icons/Hot_Deal2.png";
 
   /// Assets for iconsLocation
   /// assets/icons/location.png
