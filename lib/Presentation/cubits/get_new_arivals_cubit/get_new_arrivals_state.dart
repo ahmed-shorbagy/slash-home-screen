@@ -8,3 +8,17 @@ sealed class GetNewArrivalsState extends Equatable {
 }
 
 final class GetNewArrivalsInitial extends GetNewArrivalsState {}
+
+final class GetNewArrivalsSuccess extends GetNewArrivalsState {
+  final List<NewArrival> newArrivals;
+
+  GetNewArrivalsSuccess({required this.newArrivals});
+}
+
+final class GetNewArrivalsLoading extends GetNewArrivalsState {}
+
+final class GetNewArrivalsFailure extends GetNewArrivalsState {
+  final String errMessage;
+
+  GetNewArrivalsFailure({required this.errMessage});
+}
