@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:slash_responsive_home_screen/Core/errors/simple_bloc_observer.dart';
 import 'package:slash_responsive_home_screen/Core/utils/size_config.dart';
+import 'package:slash_responsive_home_screen/Presentation/views/Home_view.dart';
 
 void main() {
   Bloc.observer = SimpleBLocObserver();
@@ -17,6 +18,7 @@ class SlashResponsiveHomeSceen extends StatelessWidget {
         .init(context); //initialize size config to get screen height and width
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
+      home: HomeView(),
     );
   }
 }
