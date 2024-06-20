@@ -39,7 +39,9 @@ class CustomAppBar extends StatelessWidget {
                     .copyWith(fontWeight: FontWeight.bold)),
           ),
         ),
-        Image.asset(Assets.iconsNotification)
+        Image.asset(
+          Assets.iconsNotification,
+        )
       ],
     );
   }

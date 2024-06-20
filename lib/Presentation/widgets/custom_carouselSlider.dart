@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:slash_responsive_home_screen/Core/utils/AppIcons.dart';
+import 'package:slash_responsive_home_screen/constants.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class CustomCarouselSlider extends StatefulWidget {
@@ -60,7 +61,7 @@ class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
           activeIndex: _currentIndex,
           count: images.length,
           effect: const ExpandingDotsEffect(
-              activeDotColor: Colors.black, dotHeight: 10, dotWidth: 7),
+              activeDotColor: kPrimaryColor, dotHeight: 10, dotWidth: 7),
           onDotClicked: (index) {
             _controller.animateToPage(index);
           },
