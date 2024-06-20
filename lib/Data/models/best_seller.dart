@@ -1,7 +1,13 @@
-class BestSeller {
+import 'package:slash_responsive_home_screen/Data/models/Product.dart';
+
+class BestSeller extends Product {
+  @override
   final int id;
+  @override
   final String name;
+  @override
   final double price;
+  @override
   final String image;
 
   BestSeller({
@@ -9,7 +15,7 @@ class BestSeller {
     required this.name,
     required this.price,
     required this.image,
-  });
+  }) : super(id: id, name: name, price: price, image: image);
 
   factory BestSeller.fromJson(Map<String, dynamic> json) {
     return BestSeller(

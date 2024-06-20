@@ -1,28 +1,24 @@
 part of 'get_recommneded_items_cubit_cubit.dart';
 
-sealed class GetRecommnededItemsCubitState extends Equatable {
-  const GetRecommnededItemsCubitState();
+sealed class GetRecommnededItemsState extends Equatable {
+  const GetRecommnededItemsState();
 
   @override
   List<Object> get props => [];
 }
 
-final class GetRecommnededItemsCubitInitial
-    extends GetRecommnededItemsCubitState {}
+final class GetRecommnededItemsInitial extends GetRecommnededItemsState {}
 
-final class GetRecommnededItemsCubitSuccess
-    extends GetRecommnededItemsCubitState {
+final class GetRecommnededItemsSuccess extends GetRecommnededItemsState {
   final List<RecommendedItem> recommendedItems;
 
-  const GetRecommnededItemsCubitSuccess({required this.recommendedItems});
+  const GetRecommnededItemsSuccess({required this.recommendedItems});
 }
 
-final class GetRecommnededItemsCubitLoading
-    extends GetRecommnededItemsCubitState {}
+final class GetRecommnededItemsLoading extends GetRecommnededItemsState {}
 
-final class GetRecommnededItemsCubitFailure
-    extends GetRecommnededItemsCubitState {
+final class GetRecommnededItemsFailure extends GetRecommnededItemsState {
   final String errMessage;
 
-  const GetRecommnededItemsCubitFailure({required this.errMessage});
+  const GetRecommnededItemsFailure({required this.errMessage});
 }

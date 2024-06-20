@@ -4,7 +4,7 @@ import 'package:slash_responsive_home_screen/Domain/Repositories/home_repository
 class GetNewArrivals {
   final HomeRepository repository;
 
-  GetNewArrivals(this.repository);
+  GetNewArrivals({required this.repository});
 
   Future<List<NewArrival>> call() async {
     return await repository.getNewArrivals();

@@ -4,7 +4,7 @@ import 'package:slash_responsive_home_screen/Domain/Repositories/home_repository
 class GetRecommended {
   final HomeRepository repository;
 
-  GetRecommended(this.repository);
+  GetRecommended({required this.repository});
 
   Future<List<RecommendedItem>> call() async {
     return await repository.getRecommended();

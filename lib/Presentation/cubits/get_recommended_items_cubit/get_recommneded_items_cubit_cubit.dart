@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:slash_responsive_home_screen/Data/models/recommended_item.dart';
@@ -5,18 +7,18 @@ import 'package:slash_responsive_home_screen/Domain/UseCases/get_recommended.dar
 
 part 'get_recommneded_items_cubit_state.dart';
 
-class GetRecommnededItemsCubitCubit
-    extends Cubit<GetRecommnededItemsCubitState> {
+class GetRecommnededItemsCubit extends Cubit<GetRecommnededItemsState> {
   final GetRecommended getRecommended;
-  GetRecommnededItemsCubitCubit({required this.getRecommended})
-      : super(GetRecommnededItemsCubitInitial());
+  GetRecommnededItemsCubit({required this.getRecommended})
+      : super(GetRecommnededItemsInitial());
   Future<void> getRecommendedItems() async {
-    emit(GetRecommnededItemsCubitLoading());
+    emit(GetRecommnededItemsLoading());
     try {
       final recommendedItems = await getRecommended();
-      emit(GetRecommnededItemsCubitSuccess(recommendedItems: recommendedItems));
+      emit(GetRecommnededItemsSuccess(recommendedItems: recommendedItems));
     } catch (e) {
-      emit(GetRecommnededItemsCubitFailure(errMessage: e.toString()));
+      log(e.toString());
+      emit(GetRecommnededItemsFailure(errMessage: e.toString()));
     }
   }
 }

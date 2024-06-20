@@ -1,7 +1,13 @@
-class RecommendedItem {
+import 'package:slash_responsive_home_screen/Data/models/Product.dart';
+
+class RecommendedItem extends Product {
+  @override
   final int id;
+  @override
   final String name;
+  @override
   final double price;
+  @override
   final String image;
 
   RecommendedItem({
@@ -9,7 +15,7 @@ class RecommendedItem {
     required this.name,
     required this.price,
     required this.image,
-  });
+  }) : super(id: id, name: name, price: price, image: image);
 
   factory RecommendedItem.fromJson(Map<String, dynamic> json) {
     return RecommendedItem(
