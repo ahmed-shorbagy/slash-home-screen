@@ -1,44 +1,71 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:slash_responsive_home_screen/Presentation/widgets/best_selling_section.dart';
-import 'package:slash_responsive_home_screen/Presentation/widgets/categories_section.dart';
-import 'package:slash_responsive_home_screen/Presentation/widgets/custom_app_bar.dart';
-import 'package:slash_responsive_home_screen/Presentation/widgets/custom_carouselSlider.dart';
-import 'package:slash_responsive_home_screen/Presentation/widgets/new_arivals_section.dart';
-import 'package:slash_responsive_home_screen/Presentation/widgets/recommended_section.dart';
-import 'package:slash_responsive_home_screen/Presentation/widgets/search_and_menu.dart';
+import 'package:slash_responsive_home_screen/Core/utils/AppIcons.dart';
+import 'package:slash_responsive_home_screen/Presentation/widgets/favorites_content.dart';
+import 'package:slash_responsive_home_screen/Presentation/widgets/home_content.dart';
+import 'package:slash_responsive_home_screen/Presentation/widgets/my_cart_content.dart';
+import 'package:slash_responsive_home_screen/Presentation/widgets/profile_content.dart';
+import 'package:slash_responsive_home_screen/constants.dart';
 
-class HOmeScreenMobileLayout extends StatelessWidget {
+class HOmeScreenMobileLayout extends StatefulWidget {
   const HOmeScreenMobileLayout({super.key});
 
   @override
+  HOmeScreenMobileLayoutState createState() => HOmeScreenMobileLayoutState();
+}
+
+class HOmeScreenMobileLayoutState extends State<HOmeScreenMobileLayout> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  static const List<Widget> _widgetOptions = <Widget>[
+    HomeContent(),
+    FavoritesContent(),
+    CartContent(),
+    ProfileContent(),
+  ];
+
+  @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 24),
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            CustomAppBar(),
-            SearchAndMenu(),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 24),
-              child: CustomCarouselSlider(),
+    return Scaffold(
+      body: _widgetOptions[_selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Image.asset(
+              Assets.iconsHome,
             ),
-            CategoriesSection(),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 8),
-              child: BestSellingSection(),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset(
+              Assets.iconsHeart,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 8),
-              child: NewArrivalSection(),
+            label: "Favorites",
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset(
+              Assets.iconsShoppingCart,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 8),
-              child: RecommededSection(),
+            label: "My Cart",
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset(
+              Assets.iconsProfileCircle,
             ),
-          ],
-        ),
+            label: "Profile",
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: kPrimaryColor,
+        unselectedItemColor: kPrimaryColor,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        onTap: _onItemTapped,
       ),
     );
   }

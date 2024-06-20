@@ -16,6 +16,7 @@ class HorizontalListView extends StatelessWidget {
       height: SizeConfig.screenhieght! * 0.16 + 50,
       width: double.infinity,
       child: ListView.builder(
+        physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         shrinkWrap: true,
         itemBuilder: (context, index) {

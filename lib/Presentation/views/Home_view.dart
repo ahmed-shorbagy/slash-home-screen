@@ -7,10 +7,23 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return AdaptiveLayout(
+      mobileLayout: (context) => const HOmeScreenMobileLayout(),
+      desktopLayout: (context) => const DesktopLayout(),
+    );
+  }
+}
+
+class DesktopLayout extends StatelessWidget {
+  const DesktopLayout({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-      body: AdaptiveLayout(
-          mobileLayout: (context) => const HOmeScreenMobileLayout(),
-          desktopLayout: (context) => const SizedBox()),
+      appBar: AppBar(title: const Text('Desktop Home')),
+      body: const Center(
+        child: Text('Desktop content goes here'),
+      ),
     );
   }
 }
