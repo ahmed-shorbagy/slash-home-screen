@@ -13,7 +13,7 @@ class HorizontalListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: SizeConfig.screenhieght! * 0.16 + 50,
+      height: SizeConfig.screenhieght! * 0.16 + 100,
       width: double.infinity,
       child: ListView.builder(
         physics: const BouncingScrollPhysics(),

@@ -40,6 +40,17 @@ class ProductLabel extends StatelessWidget {
                     scale: 0.87,
                   ),
                 ),
+                Container(
+                  decoration: const BoxDecoration(
+                      shape: BoxShape.circle, color: kPrimaryColor),
+                  child: const FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Icon(
+                      Icons.add,
+                      color: Colors.white,
+                    ),
+                  ),
+                )
               ],
             )
           ],

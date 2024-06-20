@@ -24,7 +24,7 @@ class HorizontalListItem extends StatelessWidget {
             fit: BoxFit.fill,
             child: Container(
               height: SizeConfig.screenhieght! * 0.16,
-              width: SizeConfig.screenhieght! * 0.16,
+              width: SizeConfig.screenhieght! * 0.17,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 image: DecorationImage(
