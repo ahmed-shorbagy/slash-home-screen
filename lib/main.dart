@@ -3,13 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:slash_responsive_home_screen/Core/errors/simple_bloc_observer.dart';
 import 'package:slash_responsive_home_screen/Core/utils/service_locator.dart';
 import 'package:slash_responsive_home_screen/Core/utils/size_config.dart';
-import 'package:slash_responsive_home_screen/Domain/UseCases/get_best_sellers.dart';
-import 'package:slash_responsive_home_screen/Domain/UseCases/get_new_arrivals.dart';
-import 'package:slash_responsive_home_screen/Domain/UseCases/get_recommended.dart';
-import 'package:slash_responsive_home_screen/Presentation/cubits/get_best_sellers_cubit/get_best_sellers_cubit.dart';
-import 'package:slash_responsive_home_screen/Presentation/cubits/get_new_arivals_cubit/get_new_arrivals_cubit.dart';
-import 'package:slash_responsive_home_screen/Presentation/cubits/get_recommended_items_cubit/get_recommneded_items_cubit_cubit.dart';
-import 'package:slash_responsive_home_screen/Presentation/views/Home_view.dart';
+import 'package:slash_responsive_home_screen/Features/home/Domain/UseCases/get_best_sellers.dart';
+import 'package:slash_responsive_home_screen/Features/home/Domain/UseCases/get_new_arrivals.dart';
+import 'package:slash_responsive_home_screen/Features/home/Domain/UseCases/get_recommended.dart';
+import 'package:slash_responsive_home_screen/Features/home/Presentation/cubits/get_best_sellers_cubit/get_best_sellers_cubit.dart';
+import 'package:slash_responsive_home_screen/Features/home/Presentation/cubits/get_new_arivals_cubit/get_new_arrivals_cubit.dart';
+import 'package:slash_responsive_home_screen/Features/home/Presentation/cubits/get_recommended_items_cubit/get_recommneded_items_cubit_cubit.dart';
+import 'package:slash_responsive_home_screen/Features/home/Presentation/views/Home_view.dart';
 
 void main() {
   Bloc.observer = SimpleBLocObserver();

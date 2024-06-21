@@ -1,4 +1,4 @@
-import 'package:slash_responsive_home_screen/Data/models/Product.dart';
+import 'package:slash_responsive_home_screen/Features/home/Data/models/Product.dart';
 
 class RecommendedItems extends Product {
   @override
