@@ -20,40 +20,47 @@ class ProductLabel extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(product.name,
-            textAlign: TextAlign.start,
-            style: AppStyles.styleRegular16(context)),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              "EGP${product.price}",
-              style: AppStyles.styleRegular16(context)
-                  .copyWith(fontWeight: FontWeight.bold),
-            ),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: Image.asset(
-                    logos[Random().nextInt(logos.length)],
-                    scale: 0.87,
-                  ),
-                ),
-                Container(
-                  decoration: const BoxDecoration(
-                      shape: BoxShape.circle, color: kPrimaryColor),
-                  child: const FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Icon(
-                      Icons.add,
-                      color: Colors.white,
+        Text(
+          product.name,
+          textAlign: TextAlign.start,
+          style: AppStyles.styleRegular16(context),
+          overflow: TextOverflow.ellipsis,
+        ),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "EGP${product.price}",
+                style: AppStyles.styleRegular16(context)
+                    .copyWith(fontWeight: FontWeight.bold),
+                overflow: TextOverflow.ellipsis,
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    child: Image.asset(
+                      logos[Random().nextInt(logos.length)],
+                      scale: 0.87,
                     ),
                   ),
-                )
-              ],
-            )
-          ],
+                  Container(
+                    decoration: const BoxDecoration(
+                        shape: BoxShape.circle, color: kPrimaryColor),
+                    child: const FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
+                    ),
+                  )
+                ],
+              )
+            ],
+          ),
         ),
       ],
     );

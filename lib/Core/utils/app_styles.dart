@@ -44,7 +44,7 @@ double getResponsiveFontSize(context, {required double fontSize}) {
   double scaleFactor = getScaleFactor(context);
   double responsiveFontSize = fontSize * scaleFactor;
 
-  double lowerLimit = fontSize * .97;
+  double lowerLimit = fontSize * 0.7;
   double upperLimit = fontSize * 1.3;
 
   return responsiveFontSize.clamp(lowerLimit, upperLimit);
@@ -56,6 +56,6 @@ double getScaleFactor(context) {
   if (width < SizeConfig.desktop) {
     return width / 1000;
   } else {
-    return width / 1920;
+    return width / 920;
   }
 }

@@ -23,10 +23,14 @@ class CustomAppBar extends StatelessWidget {
             titleAlignment: ListTileTitleAlignment.titleHeight,
             visualDensity: const VisualDensity(horizontal: -4, vertical: -4),
             trailing: Transform.rotate(
-                angle: -1.571, child: const Icon(Icons.arrow_back_ios)),
+                alignment: Alignment.center,
+                angle: -1.571,
+                child: const Icon(
+                  Icons.arrow_back_ios,
+                )),
             leading: Image.asset(Assets.iconsLocation),
             title: SizedBox(
-              width: SizeConfig.screenwidth! * 0.18,
+              width: MediaQuery.sizeOf(context).width * 0.18,
               child: Text(
                 "Nasr City",
                 maxLines: 1,

@@ -44,15 +44,18 @@ class SearchAndMenu extends StatelessWidget {
         Flexible(
           flex: 1,
           fit: FlexFit.tight,
-          child: Container(
-            decoration: const BoxDecoration(
-              color: Color(0xffE4E4E4),
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-            ),
-            child: Image.asset(
-              color: const Color(0xff5F5F5F),
-              Assets.iconsHorizontalSlider2,
-              scale: 0.7,
+          child: AspectRatio(
+            aspectRatio: 2 / 1.5,
+            child: Container(
+              decoration: const BoxDecoration(
+                color: Color(0xffE4E4E4),
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+              ),
+              child: Image.asset(
+                color: const Color(0xff5F5F5F),
+                Assets.iconsHorizontalSlider2,
+                scale: 0.7,
+              ),
             ),
           ),
         )

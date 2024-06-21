@@ -30,15 +30,18 @@ class CategoriesSection extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 16),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                for (var icon in icons)
-                  Padding(
+                ...List.generate(
+                  icons.length,
+                  (index) => Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 4),
                     child: CircularCategoriesItem(
-                      icon: icon,
+                      icon: icons[index],
                       onTap: () {},
                     ),
-                  )
+                  ),
+                ),
               ],
             ),
           ),

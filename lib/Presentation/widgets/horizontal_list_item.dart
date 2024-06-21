@@ -17,32 +17,34 @@ class HorizontalListItem extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Stack(children: [
-          FittedBox(
-            fit: BoxFit.fill,
-            child: Container(
-              height: SizeConfig.screenhieght! * 0.16,
-              width: SizeConfig.screenhieght! * 0.17,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                image: DecorationImage(
-                    fit: BoxFit.fill, image: AssetImage(product.image)),
+    return FittedBox(
+      child: SizedBox(
+        width: MediaQuery.sizeOf(context).width * 0.17,
+        child: Column(
+          children: [
+            Stack(children: [
+              Container(
+                height: MediaQuery.sizeOf(context).width * 0.16,
+                width: MediaQuery.sizeOf(context).width * 0.17,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  image: DecorationImage(
+                      fit: BoxFit.fill, image: AssetImage(product.image)),
+                ),
               ),
+              const Positioned(
+                top: 6,
+                right: 6,
+                child: CircularFavorietsIcon(),
+              )
+            ]),
+            SizedBox(
+              width: MediaQuery.sizeOf(context).width * 0.17,
+              child: ProductLabel(product: product, logos: logos),
             ),
-          ),
-          const Positioned(
-            top: 6,
-            right: 6,
-            child: CircularFavorietsIcon(),
-          )
-        ]),
-        SizedBox(
-          width: SizeConfig.screenhieght! * 0.16,
-          child: ProductLabel(product: product, logos: logos),
+          ],
         ),
-      ],
+      ),
     );
   }
 }
