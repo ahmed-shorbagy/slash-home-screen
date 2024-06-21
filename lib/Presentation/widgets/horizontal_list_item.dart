@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:slash_responsive_home_screen/Core/utils/AppIcons.dart';
-import 'package:slash_responsive_home_screen/Core/utils/size_config.dart';
 import 'package:slash_responsive_home_screen/Data/models/Product.dart';
 import 'package:slash_responsive_home_screen/Presentation/widgets/circular_favorits_icon.dart';
 import 'package:slash_responsive_home_screen/Presentation/widgets/product_label.dart';

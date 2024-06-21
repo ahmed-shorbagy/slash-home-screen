@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:slash_responsive_home_screen/Core/utils/size_config.dart';
 import 'package:slash_responsive_home_screen/Data/models/Product.dart';
 import 'package:slash_responsive_home_screen/Presentation/widgets/horizontal_list_item.dart';
 

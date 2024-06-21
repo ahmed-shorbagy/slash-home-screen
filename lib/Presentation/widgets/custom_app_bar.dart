@@ -3,6 +3,9 @@ import 'package:flutter/widgets.dart';
 import 'package:slash_responsive_home_screen/Core/utils/AppIcons.dart';
 import 'package:slash_responsive_home_screen/Core/utils/app_styles.dart';
 import 'package:slash_responsive_home_screen/Core/utils/size_config.dart';
+import 'package:slash_responsive_home_screen/Presentation/widgets/custom_appBar_listTile.dart';
+import 'package:slash_responsive_home_screen/Presentation/widgets/desktop_appbar_navigation_item.dart';
+import 'package:slash_responsive_home_screen/Presentation/widgets/search_and_menu.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
@@ -11,6 +14,7 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -18,34 +22,25 @@ class CustomAppBar extends StatelessWidget {
           "Slash.",
           style: AppStyles.styleBold22(context),
         ),
-        IntrinsicWidth(
-          child: ListTile(
-            titleAlignment: ListTileTitleAlignment.titleHeight,
-            visualDensity: const VisualDensity(horizontal: -4, vertical: -4),
-            trailing: Transform.rotate(
-                alignment: Alignment.center,
-                angle: -1.571,
-                child: const Icon(
-                  Icons.arrow_back_ios,
-                )),
-            leading: Image.asset(Assets.iconsLocation),
-            title: SizedBox(
-              width: MediaQuery.sizeOf(context).width * 0.18,
-              child: Text(
-                "Nasr City",
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: AppStyles.styleRegular14(context),
-              ),
-            ),
-            subtitle: Text("Cairo",
-                style: AppStyles.styleRegular14(context)
-                    .copyWith(fontWeight: FontWeight.bold)),
-          ),
-        ),
-        Image.asset(
-          Assets.iconsNotification,
-        )
+        const CustomAppBaListTile(),
+        width > SizeConfig.mobile
+            ? const Expanded(
+                child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                child: SearchAndMenu(),
+              ))
+            : const SizedBox(),
+        width > SizeConfig.mobile
+            ? const Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: DesktopLayoutAppBarNavigationItems(),
+                ),
+              )
+            : const SizedBox(),
+        width > SizeConfig.mobile
+            ? const SizedBox()
+            : Image.asset(Assets.iconsNotification)
       ],
     );
   }

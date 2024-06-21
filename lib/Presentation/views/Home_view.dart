@@ -10,7 +10,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return AdaptiveLayout(
       mobileLayout: (context) => const HOmeScreenMobileLayout(),
-      desktopLayout: (context) => const HOmeScreenMobileLayout(),
+      desktopLayout: (context) => const DesktopLayout(),
     );
   }
 }

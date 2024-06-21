@@ -29,7 +29,6 @@ class ProductLabel extends StatelessWidget {
         FittedBox(
           fit: BoxFit.scaleDown,
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 "EGP${product.price}",
@@ -37,7 +36,11 @@ class ProductLabel extends StatelessWidget {
                     .copyWith(fontWeight: FontWeight.bold),
                 overflow: TextOverflow.ellipsis,
               ),
+              SizedBox(
+                width: MediaQuery.sizeOf(context).width * 0.06,
+              ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8),

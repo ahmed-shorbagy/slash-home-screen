@@ -14,6 +14,7 @@ class HomeContent extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 20, horizontal: 24),
       child: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             CustomAppBar(),
             SearchAndMenu(),
