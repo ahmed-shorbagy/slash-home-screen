@@ -58,7 +58,7 @@ double getScaleFactor(context) {
   // double width = physicalWidth / devicePixelRatio;
 
   double width = MediaQuery.sizeOf(context).width;
-  if (width < SizeConfig.tablet) {
+  if (width < SizeConfig.mobile) {
     return width / 550;
   } else if (width < SizeConfig.desktop) {
     return width / 1000;
